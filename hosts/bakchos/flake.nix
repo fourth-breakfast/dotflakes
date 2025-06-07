@@ -1,17 +1,40 @@
 {
-  description = "nixos system flake for the hp victus 16-s0011ns. hostname: bakchos, the god of wine";
+  description = "nixos system flake for the hp victus 16-s0011ns. hostname bakchos, god of wine";
 
   inputs = {
+    # Select nixpkgs channel
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # Enable auto-cpufreq flake
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    {
+      self,
+      nixpkgs,
+      auto-cpufreq,
+      ...
+    }:
+
     {
       nixosConfigurations.bakchos = nixpkgs.lib.nixosSystem {
+        # Specify system architecture
         system = "x86_64-linux";
+
         modules = [
-          ./modules/          
+          # Pass autocpu-freq input to modules
+          auto-cpufreq.nixosModules.default
+
+          #Import hardware modules
+          ./modules/hardware/cpu.nix
+          ./modules/hardware/gpu.nix
+          ./modules/hardware/other.nix
+          ./modules/kernel.nix
+          ./modules/configuration.nix
         ];
       };
     };
