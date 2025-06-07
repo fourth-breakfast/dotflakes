@@ -33,7 +33,10 @@
           ./modules/hardware/cpu.nix
           ./modules/hardware/gpu.nix
           ./modules/hardware/other.nix
+
+          #Import software modules
           ./modules/kernel.nix
+          ./modules/filesystem.nix
           ./modules/configuration.nix
         ];
       };

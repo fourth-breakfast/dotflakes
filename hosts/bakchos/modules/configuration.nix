@@ -50,19 +50,27 @@
     desktopManager.gnome.enable = true;
   };
 
+  services.power-profiles-daemon.enable = false;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andres = {
     isNormalUser = true;
     description = "andres";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -80,11 +88,9 @@
     hwdata
     gh
     thunderbird
-    bitwarden-desktop    
+    bitwarden-desktop
     libreoffice-qt6-fresh
   ];
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
