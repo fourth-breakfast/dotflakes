@@ -3,7 +3,7 @@
 {
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Select latest stable kernel
+    kernelPackages = pkgs.linuxPackages; # Select stable kernel
 
     # Quiet boot with splash screen
     kernelParams = [
