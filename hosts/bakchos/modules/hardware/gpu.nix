@@ -41,35 +41,36 @@
       offload.enableOffloadCmd = true;
     };
 
-    # Specializations
-    specialisation = {
-      # Sync specialisation
-      sync.configuration = {
-        hardware.nvidia.prime = {
-          offload.enable = lib.mkForce false; # Disable offload
-          sync.enable = true; # Enable sync
-        };
-      };
+  };
 
-      # Blacklist specialisation
-      blacklist.configuration = {
-        hardware.nvidia = lib.mkForce { }; # Disable offload logic
-        services.xserver.videoDrivers = lib.mkForce [ "amdgpu" ]; # Remove Nvidia video drivers
-
-        # Blacklist Nvidia drivers
-        boot.blacklistedKernelModules = [
-          "nvidia"
-          "nvidia_drm"
-          "nvidia_modeset"
-          "nvidia_uvm"
-        ];
-        boot.extraModprobeConfig = ''
-          blacklist nvidia
-          blacklist nvidia_drm
-          blacklist nvidia_modeset
-          blacklist nvidia_uvm
-        '';
+  # Specializations
+  specialisation = {
+    # Sync specialisation
+    sync.configuration = {
+      hardware.nvidia.prime = {
+        offload.enable = lib.mkForce false; # Disable offload
+        sync.enable = true; # Enable sync
       };
+    };
+
+    # Blacklist specialisation
+    blacklist.configuration = {
+      hardware.nvidia = lib.mkForce { }; # Disable offload logic
+      services.xserver.videoDrivers = lib.mkForce [ "amdgpu" ]; # Remove Nvidia video drivers
+
+      # Blacklist Nvidia drivers
+      boot.blacklistedKernelModules = [
+        "nvidia"
+        "nvidia_drm"
+        "nvidia_modeset"
+        "nvidia_uvm"
+      ];
+      boot.extraModprobeConfig = ''
+        blacklist nvidia
+        blacklist nvidia_drm
+        blacklist nvidia_modeset
+        blacklist nvidia_uvm
+      '';
     };
   };
 }
