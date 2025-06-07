@@ -1,3 +1,5 @@
+{pkgs, ...}:
+
 {
   # Select kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
