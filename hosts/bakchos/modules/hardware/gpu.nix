@@ -2,11 +2,11 @@
 
 {
   # Enable boot modules
-  boot.initrd.kernelModules = [
+  boot.kernelModules = [
     "nvidia"
     "nvidia_drm" # Direct rendering manager
     "nvidia_modeset" # Kernel modesetting
-    # "nvidia_uvm" # Unified virtual memory (for CUDA)
+    "nvidia_uvm" # Unified virtual memory (for CUDA)
   ];
 
   # Enable OpenGL/graphics
