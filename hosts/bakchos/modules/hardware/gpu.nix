@@ -49,6 +49,7 @@
     sync.configuration = {
       hardware.nvidia.prime = {
         offload.enable = lib.mkForce false; # Disable offload
+        offload.enableOffloadCmd = lib.mkForce false; # Disable offload command
         sync.enable = true; # Enable sync
       };
     };
