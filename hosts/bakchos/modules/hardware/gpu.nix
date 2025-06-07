@@ -47,11 +47,13 @@
   specialisation = {
     # Sync specialisation
     sync.configuration = {
-      hardware.nvidia.prime = {
+      hardware.nvidia = {
         powerManagement.finegrained = lib.mkForce false; # Disable fine-grained power management
-        offload.enable = lib.mkForce false; # Disable offload
-        offload.enableOffloadCmd = lib.mkForce false; # Disable offload command
-        sync.enable = true; # Enable sync
+        prime = {
+          offload.enable = lib.mkForce false; # Disable offload
+          offload.enableOffloadCmd = lib.mkForce false; # Disable offload command
+          sync.enable = true; # Enable sync
+        };
       };
     };
 
