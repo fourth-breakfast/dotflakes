@@ -26,18 +26,10 @@
         system = "x86_64-linux";
 
         modules = [
-          # Pass autocpu-freq input to modules
+          # Pass required inputs to modules
           auto-cpufreq.nixosModules.default
 
-          #Import hardware modules
-          ./modules/hardware/cpu.nix
-          ./modules/hardware/gpu.nix
-          ./modules/hardware/other.nix
-
-          #Import software modules
-          ./modules/kernel.nix
-          ./modules/filesystem.nix
-          ./modules/configuration.nix
+          # Hardware modules
         ];
       };
     };
