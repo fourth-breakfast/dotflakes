@@ -31,17 +31,17 @@
             auto-cpufreq.nixosModules.default
 
             # Import modules
-            ./bakchos/boot.nix
-            ./bakchos/splash.nix
+            ./hosts/bakchos/boot.nix
+            ./hosts/bakchos/splash.nix
 
-            ./bakchos/hardware.nix
-            ./bakchos/specialisations.nix
-            ./bakchos/battery.nix
+            ./hosts/bakchos/hardware.nix
+            ./hosts/bakchos/specialisations.nix
+            ./hosts/bakchos/battery.nix
 
             ./modules/nixos/system.nix
-            ./bakchos/networking.nix
+            ./hosts/bakchos/networking.nix
 
-            ./bakchos/filesystem.nix
+            ./hosts/bakchos/filesystem.nix
             ./modules/home-manager/packages.nix
           ];
         };
