@@ -50,6 +50,7 @@
             ./common/system/allFirmware.nix
 
             # Localization
+            ./common/localization/keyboard.nix
             ./common/localization/en_es-madrid.nix
 
             # Users
@@ -58,6 +59,8 @@
             # Desktop environment
             ./common/desktop/wayland/compositors/sway.nix
             ./common/desktop/wayland/login/sddm.nix
+
+
 
           ];
         };
