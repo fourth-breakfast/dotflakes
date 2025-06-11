@@ -36,6 +36,7 @@
           ./modules/system.nix
           ./modules/networking.nix
 
+          ./modules/filesystem.nix
           ./modules/packages.nix
         ];
       };
