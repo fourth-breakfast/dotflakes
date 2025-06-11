@@ -33,6 +33,7 @@
           ./modules/boot.nix
           ./modules/hardware.nix
           ./modules/specialisations.nix
+
           ./modules/system.nix
           ./modules/networking.nix
 
