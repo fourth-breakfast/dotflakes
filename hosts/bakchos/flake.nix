@@ -33,9 +33,10 @@
           ./modules/boot.nix
           ./modules/hardware.nix
           ./modules/specialisations.nix
-          ./modules/services.nix
+          ./modules/system.nix
+          ./modules/networking.nix
 
-          
+          ./modules/packages.nix
         ];
       };
     };

@@ -5,6 +5,19 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  services = {
+    # Enable TRIM
+    fstrim.enable = true;
+
+    # xorg and Wayland drivers
+    xserver = {
+      videoDrivers = [
+        "amdgpu"
+        "nvidia"
+      ];
+    };
+  };
+
   # Hardware
   hardware = {
     # Firmware
