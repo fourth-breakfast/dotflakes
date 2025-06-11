@@ -29,7 +29,13 @@
           # Pass required inputs to modules
           auto-cpufreq.nixosModules.default
 
-          # Hardware modules
+          # Import modules
+          ./modules/boot.nix
+          ./modules/hardware.nix
+          ./modules/specialisations.nix
+          ./modules/services.nix
+
+          
         ];
       };
     };
