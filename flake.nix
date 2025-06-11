@@ -57,7 +57,7 @@
 
             # Desktop environment
             ./common/desktop/wayland/compositors/sway.nix
-            ./common/desktop/wayland/login-managers/sddm.nix
+            ./common/desktop/wayland/login/sddm.nix
 
           ];
         };

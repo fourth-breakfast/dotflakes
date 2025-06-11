@@ -11,4 +11,12 @@
 
   # Real-time audio scheduling
   security.rtkit.enable = true;
+
+  # Modern PipeWire volume control
+  environment.systemPackages = with pkgs; [
+    pwvucontrol # PipeWire volume control GUI
+    pulsemixer # TUI mixer for terminal aesthetic
+    pamixer # CLI mixer for scripts/keybinds
+    playerctl # Media control CLI
+  ];
 }
