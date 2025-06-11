@@ -58,7 +58,6 @@
 
             # Desktop environment
             ./common/desktop/wayland/compositors/sway.nix
-            ./common/desktop/wayland/login/sddm.nix
 
             ./common/desktop/utilities/audio.nix
             ./common/desktop/utilities/battery.nix
