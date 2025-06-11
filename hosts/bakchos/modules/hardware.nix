@@ -52,15 +52,15 @@
       };
     };
 
-    # Ensure iGPU gets used by default
-    environment.sessionVariables = {
-      DRI_PRIME = "0"; # Use AMD (card0)
-      __GLX_VENDOR_LIBRARY_NAME = "mesa"; # Use Mesa/AMD drivers
-      MESA_LOADER_DRIVER_OVERRIDE = "radeonsi"; # Force AMD driver
-    };
-
     # Connectivity & peripherals
     bluetooth.enable = true; # enables support for Bluetooth
     # bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  };
+
+  # Ensure iGPU gets used by default
+  environment.sessionVariables = {
+    DRI_PRIME = "0"; # Use AMD (card0)
+    __GLX_VENDOR_LIBRARY_NAME = "mesa"; # Use Mesa/AMD drivers
+    MESA_LOADER_DRIVER_OVERRIDE = "radeonsi"; # Force AMD driver
   };
 }
