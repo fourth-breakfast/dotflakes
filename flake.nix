@@ -34,19 +34,27 @@
             ./hosts/bakchos/hardware/cpu.nix
             ./hosts/bakchos/hardware/gpu.nix
             ./hosts/bakchos/hardware/ssd.nix
+            ./hosts/bakchos/hardware/bluetooth.nix
 
             ./hosts/bakchos/kernel.nix
             ./hosts/bakchos/filesystem.nix
             ./hosts/bakchos/system.nix
 
-            # System
+            # Boot
             ./common/boot/systemd-boot.nix
-            ./common/hardware/imports.nix
-            ./common/hardware/bluetooth.nix
 
+            # System
+            ./common/system/imports.nix
             ./common/system/experimental.nix
             ./common/system/allowUnfree.nix
             ./common/system/allFirmware.nix
+
+            # Localization
+            ./common/localization/en_es-madrid.nix
+
+            # Users
+            ./common/users/andres.nix
+
           ];
         };
       };
