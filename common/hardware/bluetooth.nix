@@ -1,4 +1,5 @@
+{ ... }:
 {
   bluetooth.enable = true;
-  #bluetooth.powerOnBoot = true;
+  bluetooth.powerOnBoot = true;
 }
