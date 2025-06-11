@@ -1,4 +1,4 @@
 { ... }:
 {
-  enableAllFirmware = true; # Enable all firmware (including non-free)
+  hardware.enableAllFirmware = true; # Enable all firmware (including non-free)
 }
