@@ -21,5 +21,17 @@
     thunderbird
     bitwarden-desktop
     libreoffice-qt6-fresh
+    wl-clipboard
+    mako
+    kitty
+    alacritty
+    fish
+    ghostty
+    ly
   ];
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
 }
